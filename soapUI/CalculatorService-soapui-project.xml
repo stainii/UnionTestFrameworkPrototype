@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="11b76ac3-282a-49c7-aa00-0e8f39d87b75" activeEnvironment="Default" name="CalculatorService" resourceRoot="" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="54640f42-8b1c-4fec-9bce-112b11b34fcf" wsaVersion="NONE" name="CalculatorServiceServiceSoapBinding" type="wsdl" bindingName="{http://uniontestframeworkprototype.stijnhooft.be/}CalculatorServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/UnionTestFrameworkPrototype/CalculatorService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/UnionTestFrameworkPrototype/CalculatorService?wsdl"><con:part><con:url>http://localhost:8080/UnionTestFrameworkPrototype/CalculatorService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CalculatorServiceService" targetNamespace="http://uniontestframeworkprototype.stijnhooft.be/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://uniontestframeworkprototype.stijnhooft.be/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://uniontestframeworkprototype.stijnhooft.be/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="sum" type="tns:sum"/>
+      <xs:element name="sumResponse" type="tns:sumResponse"/>
+      <xs:complexType name="sum">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:double"/>
+          <xs:element name="arg1" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="sumResponse">
+        <xs:sequence/>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="sum">
+    <wsdl:part element="tns:sum" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="sumResponse">
+    <wsdl:part element="tns:sumResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="CalculatorService">
+    <wsdl:operation name="sum">
+      <wsdl:input message="tns:sum" name="sum"></wsdl:input>
+      <wsdl:output message="tns:sumResponse" name="sumResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorServiceServiceSoapBinding" type="tns:CalculatorService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="sum">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="sum">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="sumResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorServiceService">
+    <wsdl:port binding="tns:CalculatorServiceServiceSoapBinding" name="CalculatorServicePort">
+      <soap:address location="http://localhost:8080/UnionTestFrameworkPrototype/CalculatorService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/UnionTestFrameworkPrototype/CalculatorService</con:endpoint></con:endpoints><con:operation id="eb16cd59-f053-4c09-aff2-b7a5d9f8366d" isOneWay="false" action="" name="sum" bindingOperationName="sum" type="Request-Response" outputName="sumResponse" inputName="sum" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="aea5728c-8ce7-4c3e-bca8-765e4c02e47c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/UnionTestFrameworkPrototype/CalculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:uni="http://uniontestframeworkprototype.stijnhooft.be/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <uni:sum>
+         <arg0>2</arg0>
+         <arg1>3</arg1>
+      </uni:sum>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://uniontestframeworkprototype.stijnhooft.be/CalculatorService/sum"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="1d194b44-07ea-4ed3-b9f6-e9977ed0a498" wsaVersion="NONE" name="ResponseReceiverServiceServiceSoapBinding" type="wsdl" bindingName="{http://flux.uniontestframeworkprototype.stijnhooft.be/}ResponseReceiverServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="file:/Users/stijnhooft/Documents/Projecten/UnionTestFrameworkPrototype/src/main/resources/ResponseReceiverService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/Users/stijnhooft/Documents/Projecten/UnionTestFrameworkPrototype/src/main/resources/ResponseReceiverService.wsdl"><con:part><con:url>file:/Users/stijnhooft/Documents/Projecten/UnionTestFrameworkPrototype/src/main/resources/ResponseReceiverService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ResponseReceiverServiceService" targetNamespace="http://flux.uniontestframeworkprototype.stijnhooft.be/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://flux.uniontestframeworkprototype.stijnhooft.be/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://flux.uniontestframeworkprototype.stijnhooft.be/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="receiveResponse" type="tns:receiveResponse"/>
+      <xs:element name="receiveResponseResponse" type="tns:receiveResponseResponse"/>
+      <xs:complexType name="receiveResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="receiveResponseResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="receiveResponse">
+    <wsdl:part element="tns:receiveResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveResponseResponse">
+    <wsdl:part element="tns:receiveResponseResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ResponseReceiverService">
+    <wsdl:operation name="receiveResponse">
+      <wsdl:input message="tns:receiveResponse" name="receiveResponse"></wsdl:input>
+      <wsdl:output message="tns:receiveResponseResponse" name="receiveResponseResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ResponseReceiverServiceServiceSoapBinding" type="tns:ResponseReceiverService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="receiveResponse">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="receiveResponse">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="receiveResponseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ResponseReceiverServiceService">
+    <wsdl:port binding="tns:ResponseReceiverServiceServiceSoapBinding" name="ResponseReceiverServicePort">
+      <soap:address location="http://localhost:8081/mock"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8081/mock</con:endpoint></con:endpoints><con:operation id="eb53e89c-e296-410c-8ed3-c20967c8e751" isOneWay="false" action="" name="receiveResponse" bindingOperationName="receiveResponse" type="Request-Response" outputName="receiveResponseResponse" inputName="receiveResponse" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="2e6917e6-46df-4dd7-96e1-d13509fc2334" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8081/mock</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:flux="http://flux.uniontestframeworkprototype.stijnhooft.be/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <flux:receiveResponse>
+         <!--Optional:-->
+         <arg0>?</arg0>
+      </flux:receiveResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://flux.uniontestframeworkprototype.stijnhooft.be/ResponseReceiverService/receiveResponse"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="85d975b9-57f7-43bf-a984-81a8e85ae7ce" name="Tests"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e38d6ef7-318a-4abf-b4ef-d1263373e141" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="sum with positive integers" searchProperties="true"><con:settings/><con:testStep type="request" id="036b7a1a-a1db-4385-9f93-f912a6298da5" name="sum"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>CalculatorServiceServiceSoapBinding</con:interface><con:operation>sum</con:operation><con:request name="sum" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType="" id="9f0821b8-5d9f-4540-a7c6-de290916588f"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/UnionTestFrameworkPrototype/CalculatorService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:uni="http://uniontestframeworkprototype.stijnhooft.be/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <uni:sum>
+         <arg0>1</arg0>
+         <arg1>3</arg1>
+      </uni:sum>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://uniontestframeworkprototype.stijnhooft.be/CalculatorService/sum"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="mockresponse" name="SOAP Mock Response" id="1a73efd0-e989-42ac-ac7b-06d07c915d90"><con:settings/><con:config xsi:type="con:MockResponseStep" startStep="sum" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>ResponseReceiverServiceServiceSoapBinding</con:interface><con:operation>receiveResponse</con:operation><con:path>/mock</con:path><con:port>8081</con:port><con:response id="5658b7d5-7420-481f-b1c6-377c781cb75b"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:flux="http://flux.uniontestframeworkprototype.stijnhooft.be/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <flux:receiveResponseResponse>
+         <!--Optional:-->
+         <return>?</return>
+      </flux:receiveResponseResponse>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508"/></con:response><con:assertion type="XPath Match" id="ea1cccb3-e610-4fd1-a2c7-db601c03830a"><con:configuration><path>//arg0</path><content>1.0 + 3.0 = 4.0</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

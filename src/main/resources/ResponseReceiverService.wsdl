@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://flux.uniontestframeworkprototype.stijnhooft.be/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ResponseReceiverServiceService" targetNamespace="http://flux.uniontestframeworkprototype.stijnhooft.be/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://flux.uniontestframeworkprototype.stijnhooft.be/" elementFormDefault="unqualified" targetNamespace="http://flux.uniontestframeworkprototype.stijnhooft.be/" version="1.0">
+
+  <xs:element name="receiveResponse" type="tns:receiveResponse"/>
+
+  <xs:element name="receiveResponseResponse" type="tns:receiveResponseResponse"/>
+
+  <xs:complexType name="receiveResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="receiveResponseResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="receiveResponse">
+    <wsdl:part element="tns:receiveResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="receiveResponseResponse">
+    <wsdl:part element="tns:receiveResponseResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ResponseReceiverService">
+    <wsdl:operation name="receiveResponse">
+      <wsdl:input message="tns:receiveResponse" name="receiveResponse">
+    </wsdl:input>
+      <wsdl:output message="tns:receiveResponseResponse" name="receiveResponseResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ResponseReceiverServiceServiceSoapBinding" type="tns:ResponseReceiverService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="receiveResponse">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="receiveResponse">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="receiveResponseResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ResponseReceiverServiceService">
+    <wsdl:port binding="tns:ResponseReceiverServiceServiceSoapBinding" name="ResponseReceiverServicePort">
+      <soap:address location="http://localhost:8081/mock"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
