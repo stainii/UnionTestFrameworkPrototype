@@ -18,14 +18,6 @@ public class CalculatorService {
     @WebServiceRef(ResponseReceiverServiceService.class)
     private ResponseReceiverService responseReceiverService;
     
-    /*
-    @WebServiceRef(wsdlLocation = 
-      "ResponseReceiverService.wsdl")
-    private static ResponseRe service;
-    
-    @EJB
-    private ResponseReceiverService responseReceiverService;*/
-    
     @WebMethod
     public void sum(double a, double b) {
         String sum = String.valueOf(a + b);
